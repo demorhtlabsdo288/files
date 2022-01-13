@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: corporateapps.tigo.com.gt
+  - host: stickyingress.example.com
     http:
       paths:
       - path: /foo
