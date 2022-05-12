@@ -1,0 +1,16 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: apache-scaledobject
+  namespace: keda
+spec:
+  scaleTargetRef:
+    name: php-apache
+  triggers:
+    - type: cron
+      metadata:
+      # Required
+        timezone: America/Guatemala  # The acceptable values would be a value from the IANA Time Zone Database.
+        start: 30 * * * *       # Every hour on the 30th minute
+        end: 45 * * * *         # Every hour on the 45th minute
+        desiredReplicas: "20"
